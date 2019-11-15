@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DATA>
+    <ZAPROS>
+        <extRequestId>47011000000107</extRequestId>
+        <reqNumber>47011027815894</reqNumber>
+        <reqId>47011027815894</reqId>
+        <debtorName>Дарондо Александр Федорович</debtorName>
+        <reqDate>2014-01-15</reqDate>
+        <ospNumber>511</ospNumber>
+        <ipNum>76266/12/01/51</ipNum>
+    </ZAPROS>
+    <ZAPROS>
+        <extRequestId>47011000000108</extRequestId>
+        <reqNumber>47011027815895</reqNumber>
+        <reqId>47011027815895</reqId>
+        <debtorName>ШАРАПАНЮК МИХАИЛ НИКОЛАЕВИЧ</debtorName>
+        <reqDate>2014-01-15</reqDate>
+        <ospNumber>511</ospNumber>
+        <ipNum>69211/13/01/51</ipNum>
+    </ZAPROS>
+</DATA>

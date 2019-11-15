@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+    <definition name="template" template="/WEB-INF/pages/main.jsp">
+        <put-attribute name="title" value="test title"/>
+        <put-attribute name="content" value="/WEB-INF/tpl/empty.jsp"/>
+    </definition>
+    <definition name="cabinetTmpl" template="/WEB-INF/pages/mcab.jsp">
+        <put-attribute name="title" value="Кабинет пользователя"/>
+        <put-attribute name="content" value="/WEB-INF/tpl/empty.jsp"/>
+    </definition>
+
+
+    <definition name="dafaultTmpl" template="/WEB-INF/pages/layout/default.jsp">
+        <put-attribute name="title" value="Кабинет пользователя"/>
+        <put-attribute name="content" value="/WEB-INF/tpl/empty.jsp"/>
+    </definition>
+
+    <definition name="about" extends="cabinetTmpl">
+        <put-attribute name="title" value="О системе" />
+        <put-attribute name="content" value="/WEB-INF/pages/about.jsp" />
+    </definition>
+
+    <definition name="login" extends="template">
+        <put-attribute name="title" value="КИП ФССП 03" />
+        <put-attribute name="content" value="/WEB-INF/pages/welcome.jsp" />
+    </definition>
+
+    <definition name="cabinet" extends="cabinetTmpl">
+        <put-attribute name="title" value="Все поручения" />
+        <put-attribute name="content" value="/WEB-INF/pages/cabinet.jsp" />
+    </definition>
+
+    <definition name="allbox" extends="cabinetTmpl">
+        <put-attribute name="title" value="Все поручения" />
+        <put-attribute name="content" value="/WEB-INF/pages/allItemDeptGrid.jsp" />
+    </definition>
+
+    <definition name="inbox" extends="dafaultTmpl">
+        <put-attribute name="title" value="Поручения отделу" />
+        <put-attribute name="content" value="/WEB-INF/pages/inbox.jsp" />
+    </definition>
+
+    <definition name="inboxopt" extends="cabinetTmpl">
+        <put-attribute name="title" value="Поручения отделу" />
+        <put-attribute name="content" value="/WEB-INF/pages/itemDeptGrid.jsp" />
+    </definition>
+
+    <definition name="outbox" extends="cabinetTmpl">
+        <put-attribute name="title" value="Исходящие поручения" />
+        <put-attribute name="content" value="/WEB-INF/pages/outbox.jsp" />
+    </definition>
+
+    <definition name="addorder" extends="cabinetTmpl">
+        <put-attribute name="title" value="Новое поручение" />
+        <put-attribute name="content" value="/WEB-INF/pages/addorder.jsp" />
+    </definition>
+
+    <definition name="new-resolution" extends="cabinetTmpl">
+        <put-attribute name="title" value="Новое внешнее поручение" />
+        <put-attribute name="content" value="/WEB-INF/pages/oko/new-resolution.jsp" />
+    </definition>
+
+    <definition name="orderitems" extends="cabinetTmpl">
+        <put-attribute name="title" value="Пункты поручения" />
+        <put-attribute name="content" value="/WEB-INF/pages/orderitems.jsp" />
+    </definition>
+
+    <definition name="additem" extends="cabinetTmpl">
+        <put-attribute name="title" value="Новый пункт" />
+        <put-attribute name="content" value="/WEB-INF/pages/additem.jsp" />
+    </definition>
+
+    <definition name="orderitem" extends="cabinetTmpl">
+        <put-attribute name="title" value="Пункт" />
+        <put-attribute name="content" value="/WEB-INF/pages/orderitem.jsp" />
+    </definition>
+
+    <definition name="orderitemdept" extends="cabinetTmpl">
+        <put-attribute name="title" value="Отдел" />
+        <put-attribute name="content" value="/WEB-INF/pages/orderitemdept.jsp" />
+    </definition>
+
+    <definition name="analytics" extends="cabinetTmpl">
+        <put-attribute name="title" value="Аналитика" />
+        <put-attribute name="content" value="/WEB-INF/pages/analytics.jsp" />
+    </definition>
+
+    <definition name="resolutions" extends="cabinetTmpl">
+        <put-attribute name="title" value="Внешние сроки" />
+        <put-attribute name="content" value="/WEB-INF/pages/oko/resolutions.jsp" />
+    </definition>
+
+    <!-- FOR ADMINS-->
+    <definition name="editOrder" extends="cabinetTmpl">
+        <put-attribute name="title" value="Редактирование документа" />
+        <put-attribute name="content" value="/WEB-INF/pages/edit-order.jsp" />
+    </definition>
+    <definition name="editItem" extends="cabinetTmpl">
+        <put-attribute name="title" value="Редактирование пункта" />
+        <put-attribute name="content" value="/WEB-INF/pages/edit-item.jsp" />
+    </definition>
+
+    <definition name="confirmDeleteDept" extends="cabinetTmpl">
+        <put-attribute name="title" value="Удаление исполнителя" />
+        <put-attribute name="content" value="/WEB-INF/pages/confirmDeleteDept.jsp" />
+    </definition>
+
+    <definition name="files" extends="cabinetTmpl">
+        <put-attribute name="title" value="Мои файлы" />
+        <put-attribute name="content" value="/WEB-INF/pages/files.jsp" />
+    </definition>
+
+    <!-- SETTINGS -->
+    <definition name="settingsPage" extends="cabinetTmpl">
+        <put-attribute name="title" value="Настройки системы" />
+        <put-attribute name="content" value="/WEB-INF/pages/settings/main-page.jsp" />
+    </definition>
+    <definition name="usersPage" extends="cabinetTmpl">
+        <put-attribute name="title" value="Пользователи системы" />
+        <put-attribute name="content" value="/WEB-INF/pages/settings/users-page.jsp" />
+    </definition>
+    <definition name="userEditPage" extends="cabinetTmpl">
+        <put-attribute name="title" value="Редактирование пользователя" />
+        <put-attribute name="content" value="/WEB-INF/pages/settings/users/user-edit.jsp" />
+    </definition>
+    <definition name="userAdd" extends="cabinetTmpl">
+        <put-attribute name="title" value="Новый пользователь" />
+        <put-attribute name="content" value="/WEB-INF/pages/settings/users/user-add.jsp" />
+    </definition>
+    <definition name="deptsPage" extends="cabinetTmpl">
+        <put-attribute name="title" value="Подразделения" />
+        <put-attribute name="content" value="/WEB-INF/pages/settings/depts-page.jsp" />
+    </definition>
+    <definition name="deptEdit" extends="cabinetTmpl">
+        <put-attribute name="title" value="Структурное подразделение" />
+        <put-attribute name="content" value="/WEB-INF/pages/settings/depts/edit.jsp" />
+    </definition>
+    <definition name="ordertypesPage" extends="cabinetTmpl">
+        <put-attribute name="title" value="Настройки системы" />
+        <put-attribute name="content" value="/WEB-INF/pages/settings/ordertypes-page.jsp" />
+    </definition>
+    <definition name="typeEdit" extends="cabinetTmpl">
+        <put-attribute name="title" value="Тип поручения(Редактирование)" />
+        <put-attribute name="content" value="/WEB-INF/pages/settings/ordertypes/type-edit.jsp" />
+    </definition>
+
+    <!-- UPLOAD FILES -->
+    <definition name="upload" extends="cabinetTmpl">
+        <put-attribute name="title" value="Загрузка файла" />
+        <put-attribute name="content" value="/WEB-INF/pages/upload.jsp" />
+    </definition>
+
+    <!-- DYNAMIC JS FILES -->
+    <definition name="jsdict" template="/WEB-INF/dynamic-js/dict.jsp"></definition>
+
+    <!-- MY ERROR HANDLERS -->
+    <definition name="my403" extends="cabinetTmpl">
+        <put-attribute name="title" value="Доступ запрещен!" />
+        <put-attribute name="content" value="/WEB-INF/error-page/403.jsp" />
+    </definition>
+
+</tiles-definitions>

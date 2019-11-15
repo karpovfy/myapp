@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                    http://www.springframework.org/schema/security 
+                    http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+    <http pattern="/img" security="none" />
+    <http pattern="/css/images" security="none" />
+    <http pattern="/js" security="none" />
+    <http pattern="/fonts" security="none" />
+    <http pattern="/app/dict.js" security="none" />
+
+    <http auto-config="true" use-expressions="true">
+        <intercept-url pattern="/cabinet/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
+        <intercept-url pattern="/analytics/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
+        <intercept-url pattern="/files/owner" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
+        <intercept-url pattern="/inbox/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
+        <intercept-url pattern="/outbox/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
+        <intercept-url pattern="/allbox/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
+        <intercept-url pattern="/upload/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
+        <intercept-url pattern="/add-order/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RUK')" />
+        <intercept-url pattern="/order/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RUK', 'ROLE_USER')" />
+
+        <intercept-url pattern="/resolution/**" access="hasAnyRole('ROLE_KIP', 'ROLE_OKO')" />
+
+        <intercept-url pattern="/edit/**" access="hasAnyRole('ROLE_KIP')" />
+        <intercept-url pattern="/settings/**" access="hasAnyRole('ROLE_KIP')" />
+
+        <intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY"  />
+      
+        <form-login login-page="/signin" authentication-failure-url="/inbox" default-target-url="/inbox" />
+       
+       
+        
+   
+        <access-denied-handler error-page="/403" />
+    </http>
+
+    <authentication-manager>
+        <authentication-provider user-service-ref="customUserDetailsService"></authentication-provider>
+    </authentication-manager>
+
+    <!--
+        <ldap-server url="ldap://10.3.4.10:389" />
+        <ldap-authentication-provider user-dn-pattern="uid={0},ou=r03,ou=users,dc=fssprus,dc=ru"/>
+    -->
+
+</beans:beans>
