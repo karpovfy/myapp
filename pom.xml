@@ -11,7 +11,7 @@
 
 
     <properties>
-        <spring.version>3.0.5.RELEASE</spring.version>
+        <spring.version>5.3.18</spring.version>
         <hibernate.version>3.5.1-Final</hibernate.version>
         <tiles2.version>2.1.4</tiles2.version>
         <slf.version>1.5.11</slf.version>
